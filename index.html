@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider Focus Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="panel greeting-panel" aria-labelledby="greeting-title">
+      <div class="top-actions">
+        <label class="name-field" for="nameInput">
+          <span>Name</span>
+          <input id="nameInput" type="text" placeholder="Your name">
+        </label>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle light or dark mode">Dark</button>
+      </div>
+      <p id="timeText" class="time">00:00:00</p>
+      <p id="dateText" class="date">Monday, January 1, 2026</p>
+      <h1 id="greeting-title">Good Morning</h1>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="panel timer-panel" aria-labelledby="timer-title">
+        <div class="section-heading">
+          <h2 id="timer-title">Focus Timer</h2>
+          <label class="timer-setting" for="minutesInput">
+            <span>Minutes</span>
+            <input id="minutesInput" type="number" min="1" max="120" value="25">
+          </label>
+        </div>
+        <p id="timerDisplay" class="timer-display">25:00</p>
+        <div class="button-row">
+          <button id="startTimer" type="button">Start</button>
+          <button id="stopTimer" type="button" class="secondary">Stop</button>
+          <button id="resetTimer" type="button" class="secondary">Reset</button>
+        </div>
+      </section>
+
+      <section class="panel tasks-panel" aria-labelledby="tasks-title">
+        <div class="section-heading">
+          <h2 id="tasks-title">Tasks</h2>
+          <button id="sortTasks" type="button" class="secondary">Sort</button>
+        </div>
+        <form id="taskForm" class="input-row">
+          <input id="taskInput" type="text" placeholder="Add a new task..." autocomplete="off">
+          <button type="submit">Add</button>
+        </form>
+        <p id="taskMessage" class="message" aria-live="polite"></p>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+
+      <section class="panel links-panel" aria-labelledby="links-title">
+        <h2 id="links-title">Quick Links</h2>
+        <form id="linkForm" class="link-form">
+          <input id="linkNameInput" type="text" placeholder="Link name" autocomplete="off">
+          <input id="linkUrlInput" type="text" placeholder="example.com" autocomplete="off">
+          <button type="submit">Add Link</button>
+        </form>
+        <div id="quickLinks" class="quick-links"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
